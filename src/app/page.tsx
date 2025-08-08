@@ -3,6 +3,7 @@ import { Check, Star } from 'lucide-react';
 
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import Phone from '@/components/Phone';
+import { Reviews } from '@/components/Reviews';
 import { Icons } from '@/components/Icons';
 
 export default function Home() {
@@ -234,6 +235,9 @@ export default function Home() {
                         </div>
                     </div>
                 </MaxWidthWrapper>
+                <div className="pt-16">
+                    <Reviews />
+                </div>
             </section>
         </div>
     );
