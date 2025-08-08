@@ -1,8 +1,12 @@
 import Image from 'next/image';
-import { Check, Star } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Check, Star } from 'lucide-react';
 
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import Phone from '@/components/Phone';
+import { Reviews } from '@/components/Reviews';
+import { Icons } from '@/components/Icons';
+import { buttonVariants } from '@/components/ui/button';
 
 export default function Home() {
     return (
@@ -112,9 +116,9 @@ export default function Home() {
                             <Image
                                 src="/your-image.png"
                                 alt="your image"
-                                className="absolute -top-20 left-56 hidden w-40 select-none sm:block lg:hidden lg:w-52 xl:block"
-                                width={150}
-                                height={150}
+                                className="absolute -top-20 left-56 hidden w-40 select-none sm:block lg:hidden lg:w-52 2xl:block"
+                                width={160}
+                                height={160}
                             />
                             <Image
                                 src="/line.png"
@@ -129,6 +133,179 @@ export default function Home() {
                             />
                         </div>
                     </div>
+                </MaxWidthWrapper>
+            </section>
+            <section className="grainy-dark bg-slate-100 py-24">
+                <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
+                    <div className="flex flex-col items-center gap-4 sm:gap-6 lg:flex-row">
+                        <h2 className="order-1 mt-2 text-center text-5xl !leading-tight font-bold tracking-tight text-balance text-gray-900 md:text-6xl">
+                            What our{' '}
+                            <span className="relative px-2">
+                                customers{' '}
+                                <Icons.underline className="pointer-events-none absolute inset-x-0 -bottom-6 hidden text-green-500 sm:block" />
+                            </span>{' '}
+                            say
+                        </h2>
+                        <Image
+                            src="/snake-2.png"
+                            alt="snake"
+                            className="order-0 w-24 lg:order-2"
+                            width={96}
+                            height={96}
+                        />
+                    </div>
+                    <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                        <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+                            <div className="mb-2 flex gap-0.5">
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                            </div>
+                            <div className="text-lg leading-8">
+                                <p>
+                                    "The case feels durable and I even got a
+                                    complement on the design. Had the case for
+                                    two and a half months now and{' '}
+                                    <span className="bg-slate-800 p-0.5 text-white">
+                                        the image is super clear
+                                    </span>
+                                    , on the case I had before, the image
+                                    started fading into yellow-ish color after a
+                                    couple weeks. Love it"
+                                </p>
+                            </div>
+                            <div className="mt-2 flex gap-4">
+                                <Image
+                                    src="/users/user-1.png"
+                                    alt="happy user"
+                                    className="h-12 w-12 rounded-full object-cover"
+                                    width={48}
+                                    height={48}
+                                />
+                                <div className="flex flex-col">
+                                    <p className="font-semibold">Johnatan</p>
+                                    <div className="flex items-center gap-1.5 text-zinc-600">
+                                        <Check className="h-4 w-4 stroke-[3px] text-green-600" />
+                                        <p className="text-sm">
+                                            Verified Purchase
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+                            <div className="mb-2 flex gap-0.5">
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                                <Star className="h-5 w-5 fill-green-600 text-green-600" />
+                            </div>
+                            <div className="text-lg leading-8">
+                                <p>
+                                    "I usually keep my phone together with my
+                                    keys in my pocket and that led to some
+                                    pretty heavy scratchmarks on all of my last
+                                    phone cases. This one, besides a barely
+                                    noticeable scratch on the corner{' '}
+                                    <span className="bg-slate-800 p-0.5 text-white">
+                                        looks brand new after about half a year
+                                    </span>
+                                    . I dig it."
+                                </p>
+                            </div>
+                            <div className="mt-2 flex gap-4">
+                                <Image
+                                    src="/users/user-4.jpg"
+                                    alt="happy user"
+                                    className="h-12 w-12 rounded-full object-cover"
+                                    width={48}
+                                    height={48}
+                                />
+                                <div className="flex flex-col">
+                                    <p className="font-semibold">Josh</p>
+                                    <div className="flex items-center gap-1.5 text-zinc-600">
+                                        <Check className="h-4 w-4 stroke-[3px] text-green-600" />
+                                        <p className="text-sm">
+                                            Verified Purchase
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </MaxWidthWrapper>
+                <div className="pt-16">
+                    <Reviews />
+                </div>
+            </section>
+            <section>
+                <MaxWidthWrapper className="py-24">
+                    <div className="mb-12 px-6 lg:px-8">
+                        <div className="mx-auto max-w-2xl sm:text-center">
+                            <h2 className="order-1 mt-2 text-center text-5xl !leading-tight font-bold tracking-tight text-balance text-gray-900 md:text-6xl">
+                                Upload your photo and get{' '}
+                                <span className="relative bg-green-600 px-2 text-white">
+                                    your own case{' '}
+                                </span>{' '}
+                                now
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="mx-auto max-w-6xl px-6 lg:px-8">
+                        <div className="relative flex grid-cols-2 flex-col items-center gap-40 md:grid">
+                            <Image
+                                src="/arrow.png"
+                                alt="arrow"
+                                className="absolute top-[25rem] left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rotate-90 md:top-1/2 md:rotate-0"
+                                width={150}
+                                height={150}
+                            />
+                            <div className="relative h-80 w-full max-w-sm rounded-xl bg-gray-900/5 ring-gray-900/10 ring-inset md:h-full md:justify-self-end lg:rounded-2xl">
+                                <Image
+                                    src="/horse.jpg"
+                                    alt="woman kissing horse"
+                                    className="h-full w-full rounded-md bg-white object-cover shadow-2xl ring-1 ring-gray-900/10"
+                                    width={200}
+                                    height={200}
+                                />
+                            </div>
+                            <Phone className="w-60" imgSrc="/horse_phone.jpg" />
+                        </div>
+                    </div>
+                    <ul className="mx-auto mt-12 w-fit max-w-prose space-y-2 sm:text-lg">
+                        <li className="w-fit">
+                            <Check className="mr-1.5 inline h-5 w-5 text-green-600" />
+                            Hight-quality silicone material
+                        </li>
+                        <li className="w-fit">
+                            <Check className="mr-1.5 inline h-5 w-5 text-green-600" />
+                            Scratch and fingerprint resistant coating
+                        </li>
+                        <li className="w-fit">
+                            <Check className="mr-1.5 inline h-5 w-5 text-green-600" />
+                            Wireless charging compatible
+                        </li>
+                        <li className="w-fit">
+                            <Check className="mr-1.5 inline h-5 w-5 text-green-600" />
+                            5 year print warranty
+                        </li>
+
+                        <div className="flex justify-center">
+                            <Link
+                                href="/configure/upload"
+                                className={buttonVariants({
+                                    size: 'lg',
+                                    className: 'mx-auto mt-8',
+                                })}
+                            >
+                                Create your case now
+                                <ArrowRight className="ml-1.5 h-4 w-4" />
+                            </Link>
+                        </div>
+                    </ul>
                 </MaxWidthWrapper>
             </section>
         </div>
